@@ -76,7 +76,7 @@ class Home extends StatelessWidget {
                           "color": Colors.red.shade700,
                         },
                         {
-                          "title": "Super Duper Burgers",
+                          "title": "Super Burgers",
                           "location": "Stall 89",
                           "price": "800 for 2",
                           "date": "21st - 23rd",
