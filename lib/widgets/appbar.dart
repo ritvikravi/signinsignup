@@ -19,8 +19,8 @@ class CustomAppBar extends StatelessWidget {
           ),
         ),
         borderRadius: BorderRadiusDirectional.only(
-          bottomEnd: Radius.circular(25),
-          bottomStart: Radius.circular(25),
+          bottomEnd: Radius.circular(11),
+          bottomStart: Radius.circular(11),
         ),
         color: Color(0xff0A0908),
       ),

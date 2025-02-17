@@ -7,12 +7,20 @@ import '../widgets/event.dart';
 import '../models/dummy.dart';
 import '../widgets/side_drawer.dart';
 import '../widgets/store_slider.dart';
+import '../widgets/annoucement_tile.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // for now, will make it dynamic
+    const announcements = {
+      "Paintball registration will be closing soon, at 3pm! Come ASAP":
+          "7:30pm, 21st Feb,2025",
+      "Horror House closing times have been postponed to 11pm. Enjoy!":
+          "5:15pm, 20st Feb,2025",
+    };
     return Scaffold(
       drawer: SideDrawer(),
       backgroundColor: const Color(0xff0A0908),
@@ -95,7 +103,9 @@ class Home extends StatelessWidget {
                         },
                       ],
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding:
                           EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -111,41 +121,17 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 5,
                     ),
-                    Container(
-                      padding: EdgeInsets.all(16),
-                      margin: EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff1C1A1A),
-                        // borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        "Paintball registration will be closing soon, at 3pm! Come ASAP",
-                        style: GoogleFonts.ibmPlexMono(
-                            fontSize: 15,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                      ),
+                    ...announcements.entries.map(
+                      (entry) {
+                        return AnnouncementTile(
+                          announcement: entry.key,
+                          date: entry.value,
+                        );
+                      },
                     ),
-                    SizedBox(height: 10),
-                    Container(
-                      padding: EdgeInsets.all(16),
-                      margin: EdgeInsets.symmetric(horizontal: 16),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff1C1A1A),
-                        // borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        "Horror House closing times have been postponed to 11pm. Enjoy!",
-                        style: GoogleFonts.ibmPlexMono(
-                            fontSize: 15,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                      ),
-                    ),
+                    const SizedBox(height: 10,),
                   ],
                 ),
               ),
