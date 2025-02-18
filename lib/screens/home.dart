@@ -29,7 +29,7 @@ class Home extends StatelessWidget {
         children: [
           // Custom app bar
           const CustomAppBar(
-            title: "TIRUTSUVA",
+            title: "TIRUTSAVA",
           ),
           // Main scrollable content
           Expanded(
@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
                   children: [
                     const SizedBox(height: 20),
                     Text(
-                      "NEON DREAMS. PURE EUPHORIA",
+                      "CYBERPUNK x EUPHORIA",
                       style: GoogleFonts.ibmPlexMono(
                         fontSize: 23,
                         color: const Color(0xff63675D),
